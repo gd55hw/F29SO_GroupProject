@@ -48,9 +48,23 @@
     text-decoration: solid;
     text-transform: uppercase;
     outline: none;
-    padding: 20px;
+    padding: 0 30px;
+    cursor: pointer;
 }
 
 .Header__item:hover {
     color: rgba(0, 228, 49, 0.671);
+}
+
+.profile_image {
+    display: flex;
+    align-items: center;
+}
+
+.profile_image > h4 {
+    margin-left: 10px;
+}
+
+.header__right {
+    display: flex;
 }
