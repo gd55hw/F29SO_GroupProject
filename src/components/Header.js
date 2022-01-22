@@ -21,7 +21,11 @@ function Header() {
                 <a href="Settings" className="Header__item">Settings</a>
             </div>
 
-            <div className="header__right"></div>
+            <div className="header__right">
+                <div className="profile_image">
+                    <h4>Magik</h4>
+                </div>
+            </div>
         </div>
     )
 }
