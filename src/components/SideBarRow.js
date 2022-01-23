@@ -2,10 +2,11 @@ import React from 'react';
 import './SideBarRow.css'; 
 
 // adding props so I can pass in different atributes in SideBar class
-function SideBarRow(props){
+function SideBarRow({src, title }){
     return (
         <div className='SideBarRow'>
-            <p>{props.title}</p>
+            {src}
+            <h4>{title}</h4>
         </div>
     );
 }

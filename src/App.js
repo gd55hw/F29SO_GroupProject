@@ -2,6 +2,7 @@ import Reaact, { useEffect, useState } from "react";
 import './App.css';
 import Header from "./components/Header";
 import SideBar from "./components/SideBar";
+import Feed from "./components/Feed";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
 
       <div className="app__body">
         <SideBar />
-        {/*SideBar*/}
+        <Feed />
         {/*Feed*/}
         {/*Widgets*/}
       </div>
