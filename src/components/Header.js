@@ -1,5 +1,6 @@
 import React from 'react'; 
 import './Header.css';
+import {NavLink} from 'react-router-dom'; 
 
 function Header() {
     return (
@@ -19,7 +20,7 @@ function Header() {
                 <a href="Home" className="Header__item">Home</a>
                 <a href="MarketPlace" className="Header__item">Market Place</a>
                 <a href="DoodleCollab" className="Header__item">Doodle Collab</a>
-                <a href="Settings" className="Header__item">Settings</a>
+                <a href="Settings" className="Header__item">Settings</a> 
             </div>
 
             {/*For the profile picture/username...still need to find out to have a picture*/} 
