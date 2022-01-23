@@ -27,6 +27,8 @@ function Header() {
                 <div className="profile_image">
                     <h4>Magik</h4>
                 </div>
+                <a href="Login" className="Header__item">Login</a>
+                <a href="Signup" className="Header__item">Sign up</a>
             </div>
         </div>
     )
