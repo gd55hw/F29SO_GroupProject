@@ -7,7 +7,6 @@ function Feed(){
     return(
         <div className='feed'>
             <MessageSender />
-            {/* MessageSender */}
         </div>
     );
 }

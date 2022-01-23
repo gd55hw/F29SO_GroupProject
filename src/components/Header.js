@@ -1,6 +1,6 @@
 import React from 'react'; 
+import  { Link }  from 'react-router-dom';
 import './Header.css';
-import {NavLink} from 'react-router-dom'; 
 
 function Header() {
     return (
@@ -17,10 +17,10 @@ function Header() {
 
             {/*Here I'm declaring the bottons which will take us to other pages*/} 
             <div className="header__middle">
-                <a href="Home" className="Header__item">Home</a>
-                <a href="MarketPlace" className="Header__item">Market Place</a>
-                <a href="DoodleCollab" className="Header__item">Doodle Collab</a>
-                <a href="Settings" className="Header__item">Settings</a> 
+                <Link to="/" className="Header__item">Home</Link>
+                <Link to="MarketPlace" className="Header__item">Market Place</Link>
+                <Link to="DoodleCollab" className="Header__item">Doodle Collab</Link>
+                <Link to="Settings" className="Header__item">Settings</Link> 
             </div>
 
             {/*For the profile picture/username...still need to find out to have a picture*/} 
@@ -28,8 +28,8 @@ function Header() {
                 <div className="profile_image">
                     <h4>Magik</h4>
                 </div>
-                <a href="Login" className="Header__item">Login</a>
-                <a href="Signup" className="Header__item">Sign up</a>
+                <Link to="Login" className="Header__item">Login</Link>
+                <Link to="Signup" className="Header__item">Sign up</Link>
             </div>
         </div>
     )
