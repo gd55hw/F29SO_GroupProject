@@ -5,7 +5,8 @@ import SideBarRow from './SideBarRow';
 function SideBar(){
     return(
         <div className='Sidebar'>
-            <SideBarRow />
+            <SideBarRow title="Friends"/>
+            <SideBarRow title="Market Place"/>
    
         </div>
     );
