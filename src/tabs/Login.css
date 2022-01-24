@@ -21,12 +21,6 @@
     color: black;
 }
 
-.login {
-    background-color: rgb(255, 215, 235);
-    width: auto;
-    height: 2000px;
-}
-
 .login__logo {
     align-items: center;
 } 
