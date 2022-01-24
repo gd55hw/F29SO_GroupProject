@@ -21,6 +21,7 @@ function Header() {
                 <Link to="MarketPlace" className="Header__item">Market Place</Link>
                 <Link to="DoodleCollab" className="Header__item">Doodle Collab</Link>
                 <Link to="Settings" className="Header__item">Settings</Link> 
+                <Link to="Library" className="Header__item">Library</Link> 
             </div>
 
             {/*For the profile picture/username...still need to find out to have a picture*/} 
