@@ -1,0 +1,55 @@
+import mongodb from "mongodb";
+
+const ObjectId = mongodb.ObjectId;
+
+let postsColl;    // Will hold a reference to the 'posts' collection
+
+export default class PostsDAO {
+  // Gets a reference to the 'posts' collection and saves it in 'postsCollection'
+  static async injectDB(conn) {
+    if (postsColl) {
+      return;
+    }
+
+    try {
+      postsColl = await conn.db(process.env.MASHUP_NS).collection("posts");
+    }
+    catch (err) {
+      console.error("Error: Unable to connect to database");
+      console.error(err.stack);
+    }
+  }
+
+  static async addPost(userId, text, image, date) {
+    try {
+      const newPost = {
+        user_id: userId, 
+        text: text, 
+        image: image, 
+        date: date
+      };
+
+      return await postsColl.insertOne(newPost);
+    }
+    catch (err) {
+      console.error("Error: Unable to add post");
+      console.error(err.stack);
+      return { error: err };
+    }
+  }
+
+  static async deletePost(postId) {
+    try {
+      const dbResponse = await postsColl.deleteOne({
+        _id: ObjectId(postId)
+      });
+
+      return dbResponse;
+    }
+    catch (err) {
+      console.error("Error: Unable to delete post");
+      console.error(err.stack);
+      return { error: err };
+    }
+  }
+}

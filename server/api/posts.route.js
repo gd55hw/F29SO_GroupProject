@@ -1,8 +1,12 @@
 import express from "express";
+import PostsController from "./posts.controller.js";
 
 const router = express.Router();
 
-// Default route
-router.route("/").get((req, res) => res.send("Test"));
+// Routes for posts
+router.route("/")
+  .get((req, res) => res.send("Test"))
+  .post(PostsController.addPost)
+  .delete(PostsController.deletePost);
 
 export default router;
