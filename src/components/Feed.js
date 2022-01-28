@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import './Feed.css';
 import MessageSender from './MessageSender';
 import Post from './Post';
@@ -10,7 +10,6 @@ function Feed(){
             <MessageSender />
             <Post 
             message="this works"
-            timestamp='timestamp'
             username='me'
             //image={image}
             />
