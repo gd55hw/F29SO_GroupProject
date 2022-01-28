@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
 import "./Header.css";
 
 function Header() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     /*making the header, we need to divide the header into three parts 
           each part will have items inside of it such as tabs, logo and so on
@@ -37,7 +39,8 @@ function Header() {
       {/*For the profile picture/username...still need to find out to have a picture*/}
       <div className="header__right">
         <div className="profile_image">
-          <h4>Magik</h4>
+          <img src={user.photoURL}/>
+          <h4>{user.displayName}</h4>
         </div>
         <Link to="Login" className="Header__item">
           Login
