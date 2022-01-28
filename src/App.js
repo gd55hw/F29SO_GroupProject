@@ -7,10 +7,11 @@ import MarketPlace from "./tabs/Marketplace";
 import DoodleCollab from "./tabs/DoodleCollab";
 import Login from "./tabs/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
 function App() {
   //When there is no user
-  const user = "Haia";
+  const [{ user }, dispatch] = useStateValue();
   return (
     <Router>
       <div className="app">
