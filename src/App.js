@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   //When there is no user
-  const user = 'Haia';
+  const user = "Haia";
   return (
     <Router>
       <div className="app">
