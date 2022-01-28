@@ -5,7 +5,7 @@ const ObjectId = mongodb.ObjectId;
 let postsColl;    // Will hold a reference to the 'posts' collection
 
 export default class PostsDAO {
-  // Gets a reference to the 'posts' collection and saves it in 'postsCollection'
+  // Gets a reference to the 'posts' collection and saves it in 'postsColl'
   static async injectDB(conn) {
     if (postsColl) {
       return;
@@ -17,6 +17,27 @@ export default class PostsDAO {
     catch (err) {
       console.error("Error: Unable to connect to database");
       console.error(err.stack);
+    }
+  }
+
+  
+  // Gets the newest posts on the app. 
+  // By default, the last 25 posts made on the app are returned.
+  static async getPosts(maxPostCount = 25, postsToSkip = 0) {
+    try {
+      const options = {
+        sort: { date: -1 }, 
+        skip: postsToSkip, 
+        limit: maxPostCount
+      };
+
+      let cursor = await postsColl.find({}, options);
+      return cursor.toArray();
+    }
+    catch (err) {
+      console.error("Error: Unable to get posts");
+      console.error(err.stack);
+      return [];
     }
   }
 
